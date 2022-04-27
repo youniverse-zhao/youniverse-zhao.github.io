@@ -1,0 +1,59 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Install Golang From Source [Note] - Youniverse</title><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Navigate to a proper base dir cd ~/golang Get the source for the bootstrap compiler # clone the go source repo into a folder, go1.4 in this case git clone git@github.com:golang/go.git go1.4  # navigate to the source folder cd go1.4  # checkout the release-branch.go1.4 branch git checkout release-branch.go1.4 Build the bootstrap compiler # navigate into the src directory cd src  # set environment variable CGO_ENABLED to 0 CGO_ENABLED=0  # run make."><meta property="og:image" content><meta property="og:title" content="Install Golang From Source [Note]"><meta property="og:description" content="Navigate to a proper base dir cd ~/golang Get the source for the bootstrap compiler # clone the go source repo into a folder, go1.4 in this case git clone git@github.com:golang/go.git go1.4  # navigate to the source folder cd go1.4  # checkout the release-branch.go1.4 branch git checkout release-branch.go1.4 Build the bootstrap compiler # navigate into the src directory cd src  # set environment variable CGO_ENABLED to 0 CGO_ENABLED=0  # run make."><meta property="og:type" content="article"><meta property="og:url" content="http://example.org/posts/install-golang-from-source-note/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-09-18T07:47:47+10:00"><meta property="article:modified_time" content="2021-09-18T07:47:47+10:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Install Golang From Source [Note]"><meta name=twitter:description content="Navigate to a proper base dir cd ~/golang Get the source for the bootstrap compiler # clone the go source repo into a folder, go1.4 in this case git clone git@github.com:golang/go.git go1.4  # navigate to the source folder cd go1.4  # checkout the release-branch.go1.4 branch git checkout release-branch.go1.4 Build the bootstrap compiler # navigate into the src directory cd src  # set environment variable CGO_ENABLED to 0 CGO_ENABLED=0  # run make."><script src=http://example.org/js/feather.min.js></script>
+<link href=http://example.org/css/fonts.b685ac6f654695232de7b82a9143a46f9e049c8e3af3a21d9737b01f4be211d1.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=http://example.org/css/main.40ca3a860425083862b7ebd55447caec5c4384573f0cb098b8d06a91e8dace2e.css><link id=darkModeStyle rel=stylesheet type=text/css href=http://example.org/css/dark.726cd11ca6eb7c4f7d48eb420354f814e5c1b94281aaf8fd0511c1319f7f78a4.css disabled><link rel=stylesheet type=text/css href=http://example.org/css/custom.2a7338058963dea32693edcc7b5e08d7fb899a916196a61db84cdb93dcc435bb.css></head><body><div class=content><header><div class=main><a href=http://example.org/>Youniverse</a></div><nav><a href=/>Home</a>
+<a href=/posts>All posts</a>
+<a href=/about>About</a>
+<a href=/tags>Tags</a>
+| <a id=dark-mode-toggle onclick=toggleTheme() href></a>
+<script src=http://example.org/js/themetoggle.js></script></nav></header><main><article><div class=title><h1 class=title>Install Golang From Source [Note]</h1><div class=meta>Posted on Sep 18, 2021</div></div><section class=body><h2 id=navigate-to-a-proper-base-dir>Navigate to a proper base dir</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>cd ~/golang
+</span></span></code></pre></div><h2 id=get-the-source-for-the-bootstrap-compiler>Get the source for the bootstrap compiler</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># clone the go source repo into a folder, go1.4 in this case</span>
+</span></span><span style=display:flex><span>git clone git@github.com:golang/go.git go1.4
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># navigate to the source folder</span>
+</span></span><span style=display:flex><span>cd go1.4
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># checkout the release-branch.go1.4 branch</span>
+</span></span><span style=display:flex><span>git checkout release-branch.go1.4
+</span></span></code></pre></div><h2 id=build-the-bootstrap-compiler>Build the bootstrap compiler</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># navigate into the src directory</span>
+</span></span><span style=display:flex><span>cd src
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># set environment variable CGO_ENABLED to 0</span>
+</span></span><span style=display:flex><span>CGO_ENABLED<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># run make.bash</span>
+</span></span><span style=display:flex><span>./make.bash
+</span></span></code></pre></div><h2 id=get-the-source-for-the-go-distribution>Get the source for the Go distribution</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># clone the source code into a folder, in this case, a folder named goroot</span>
+</span></span><span style=display:flex><span>git clone https://go.googlesource.com/go goroot
+</span></span><span style=display:flex><span><span style=color:#75715e># or</span>
+</span></span><span style=display:flex><span>git clone git@github.com:golang/go.git goroot
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># navigate into goroot</span>
+</span></span><span style=display:flex><span>cd goroot
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># get all the tags (so that I can select a particular version)</span>
+</span></span><span style=display:flex><span>git fetch --all --tags 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># checkout a particular tag, e.g., go1.16.3</span>
+</span></span><span style=display:flex><span>git checkout go1.16.3
+</span></span><span style=display:flex><span><span style=color:#75715e># or create a new branch from a tag</span>
+</span></span><span style=display:flex><span>git checkout -b go1.16.3 go1.16.3
+</span></span></code></pre></div><h2 id=build-the-go-distribution>Build the Go distribution</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># navigate into the src subfolder</span>
+</span></span><span style=display:flex><span>cd src
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># run all.bash</span>
+</span></span><span style=display:flex><span>./all.bash
+</span></span></code></pre></div><h2 id=install-the-go-distribution>Install the Go distribution</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>export GOROOT_BOOTSTRAP<span style=color:#f92672>=</span>~/golang/go1.4
+</span></span><span style=display:flex><span>export GOROOT<span style=color:#f92672>=</span>~/golang/goroot
+</span></span><span style=display:flex><span>export GO_HOME<span style=color:#f92672>=</span>~/golang/go
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>export GOPATH<span style=color:#f92672>=</span>$GO_HOME
+</span></span><span style=display:flex><span>export GOBIN<span style=color:#f92672>=</span>$GOPATH/bin
+</span></span><span style=display:flex><span>export GO111MODULE<span style=color:#f92672>=</span>auto
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>export PATH<span style=color:#f92672>=</span>$PATH:$GOROOT/bin:$GOBIN
+</span></span></code></pre></div><h2 id=test-the-go-distribution>Test the Go distribution</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>go version
+</span></span></code></pre></div><h2 id=update-the-go-distribution>Update the Go distribution</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># navigate into the src subfolder</span>
+</span></span><span style=display:flex><span>cd $GOROOT/src
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># run all.bash</span>
+</span></span><span style=display:flex><span>./all.bash
+</span></span></code></pre></div></section><div class=post-tags><nav class="nav tags"><ul class=tags><li><a href=/tags/golang>golang</a></li></ul></nav></div></article></main><footer><div style=display:flex></div><div class=footer-info>2022 © Youniverse | <a href=https://github.com/athul/archie>Archie Theme</a> | Built with <a href=https://gohugo.io>Hugo</a></div></footer></div></body></html>
