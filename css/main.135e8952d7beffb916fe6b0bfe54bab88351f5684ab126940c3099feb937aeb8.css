@@ -138,6 +138,7 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 1em 0;
+  line-height: 2.5em;
 }
 
 header .main {
@@ -171,10 +172,12 @@ footer {
 .soc {
   display: flex;
   align-items: center;
-  padding-right: 1rem;
-  margin-right: 1rem;
-  border-right: 2px solid;
   border-bottom: none;
+}
+.border {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  border: 1px solid;
 }
 .footer-info {
   padding: var(--footer-padding);
@@ -327,4 +330,13 @@ table th{
 table td{
   padding: 6px 13px;
   border: 1px solid #dfe2e5;
+}
+
+/* Math Equation Support */
+/* Credit: https://geoffruddock.com/math-typesetting-in-hugo/ */
+code.has-jax {
+  -webkit-font-smoothing: antialiased;
+  background: inherit !important;
+  border: none !important;
+  font-size: 100%;
 }
