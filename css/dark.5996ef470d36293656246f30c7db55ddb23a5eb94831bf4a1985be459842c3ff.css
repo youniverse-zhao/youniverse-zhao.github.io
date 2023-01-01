@@ -15,9 +15,6 @@ body {
   text-shadow: none;
 }
 
-hr {
-  border-top: 3px dotted blue;
-}
 code {
   background-color: lightblue;
   color: black;
@@ -67,8 +64,9 @@ h6::before {
   content: "###### ";
 }
 
+/* Youniverse: thin link underline */
 a {
-  border-bottom: 3px solid var(--darkMaincolor);
+  border-bottom: 1px solid var(--darkMaincolor);
   color: inherit;
 }
 a:hover {
@@ -83,8 +81,9 @@ a:hover {
   color: black;
 }
 
+/* Youniverse: remove tag underline */
 .tags a {
-  border-bottom: 3px solid var(--darkMaincolor);
+  border-bottom: 0px solid var(--darkMaincolor);
 }
 .tags a:hover {
   background-color: var(--darkMaincolor);
