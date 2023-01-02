@@ -1,0 +1,106 @@
+<!doctype html><html><head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge"><title>Coursera | Machine Learning Specialisation (1/n) - Youniverse</title><meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="A Brief summary of Machine Learning">
+<meta property="og:image" content>
+<meta property="og:title" content="Coursera | Machine Learning Specialisation (1/n)">
+<meta property="og:description" content="A Brief summary of Machine Learning">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://youniverse.site/posts/coursera-machine-learning-specialisation-1/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2022-12-30T14:10:34+11:00">
+<meta property="article:modified_time" content="2022-12-30T14:10:34+11:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Coursera | Machine Learning Specialisation (1/n)">
+<meta name=twitter:description content="A Brief summary of Machine Learning">
+<script src=https://youniverse.site/js/feather.min.js></script>
+<link href=https://youniverse.site/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css rel=stylesheet>
+<link rel=stylesheet type=text/css media=screen href=https://youniverse.site/css/main.58c7888e1aba926704db2ced0732335f74e921a4119cb28158cb945e9b5bc234.css>
+<link id=darkModeStyle rel=stylesheet type=text/css href=https://youniverse.site/css/dark.5996ef470d36293656246f30c7db55ddb23a5eb94831bf4a1985be459842c3ff.css disabled>
+<link rel=stylesheet type=text/css href=https://youniverse.site/css/custom.2a7338058963dea32693edcc7b5e08d7fb899a916196a61db84cdb93dcc435bb.css>
+<script>MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}},window.addEventListener('load',a=>{document.querySelectorAll("mjx-container").forEach(function(a){a.parentElement.classList+='has-jax'})})</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type=text/javascript id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
+</head>
+<body>
+<div class=content><header>
+<div class=main>
+<a href=https://youniverse.site/>Youniverse</a>
+</div>
+<nav>
+<a href=/>Home</a>
+<a href=/posts>Posts</a>
+<a href=/about>About</a>
+<a href=/tags>Tags</a>
+| <span id=dark-mode-toggle onclick=toggleTheme()></span>
+<script src=https://youniverse.site/js/themetoggle.js></script>
+</nav>
+</header>
+<main>
+<article>
+<div class=title>
+<h1 class=title>Coursera | Machine Learning Specialisation (1/n)</h1>
+<div class=meta>
+<div class=post-date>
+🗓️ Dec 30, 2022
+</div>
+<div class=post-tags>
+🏷️
+<a href=/tags/coursera>Coursera</a>
+, <a href=/tags/machine-learning>Machine Learning</a>
+</div>
+</div>
+</div>
+<section class=body>
+<p>Recently, I&rsquo;m thinking of picking up machine learning and it maybe interesting to work on some toy projects, started working on the Machine Learning Specialisation on Coursera. To me, Prof. Andrew Ng&rsquo;s <a href=https://www.coursera.org/specializations/machine-learning-introduction>Machine Learning course on Coursera</a> is one of the go-to material to getting start with Machine Learning. This is my second time learning this course on Coursera, and the first time I did it, it was not yet a specialisation.</p>
+<p>👉 <em>There are certainly other materials online that can be used to start your machine learning journey, but to me, this specialisation on Coursera is the simplest for me to get my first touch of machine learn. I don&rsquo;t need to think really hard to understand its content and it is much shorter compared to other materials.</em></p>
+<p>The current version is a specialisation consisting three courses:</p>
+<ul>
+<li>Supervised Machine Learning: Regression and Classification;</li>
+<li>Advanced Learning Algorithms;</li>
+<li>Unsupervised Learning, Recommenders, Reinforcement Learning.</li>
+</ul>
+<p>This article is a brief summary of Machine Learning taken from the specialisation.</p>
+<hr>
+<p>The first course in the specialisation, &ldquo;Supervised Machine Learning: Regression and Classification&rdquo;, provides a brief summary of the machine learning domain and goes introduces the details of supervised machine learning.</p>
+<p>ℹ️ <strong>Machine learning</strong> (ML) is the science of getting computers to learn without being explicitly programmed.</p>
+<p>💡 We use computers to simplify our lives, and we tell computers how to do things by programming against them. Some of the tasks can be translated into programs easily, however, there are ones that cannot be translated into programs explicitly. This is when we use machine learing to tell a computer to learn to do certain tasks by itself.</p>
+<p>The two main types of machine learning:</p>
+<ul>
+<li><em>Supervised learning</em></li>
+<li><em>Unsupervised learning</em></li>
+</ul>
+<h2 id=supervised-learning>Supervised Learning</h2>
+<p>ℹ️ <strong>Supervised machine learning</strong>, or <strong>supervised learning</strong>, refers to algorithms that learn $x$ to $y$ or input to output mapping.</p>
+<p>The key characteristic of supervised learning is that you give your learning algorithm examples to learn from. That includes the right answers, i.e., the correct label $y$ for a given input $x$. With the correct pairs of input $x$ and desired output label $y$, the learning algorithm learns to take just the input alone without the output label and gives a reasonably accurate prediction of the output. This means, with supervised learning, you have to &ldquo;train your model&rdquo; with some example data containing both the input $x$ and the ideal output $y$. Then, once your model is &ldquo;trained&rdquo;, you can use it to take unseen input $x$ to predict the corresponding output.</p>
+<p>There are two major types of supervised learning:</p>
+<ul>
+<li><em>Regression</em>: The target is to predict a number from infinitely posibilities.</li>
+<li><em>Classification</em>: The target is to predict a category from a smaller number of possibilities.</li>
+</ul>
+<h2 id=unsupervised-learning>Unsupervised Learning</h2>
+<p>ℹ️ The task of <strong>unsupervised learning</strong> is to find some structure or pattern or just discover something interesting within the data.</p>
+<p>In unsupervised learning, the data comes only with the input $x$, and the algorithm has to find out some structure, pattern, or something interesting in the input data.</p>
+<p>❗️The word &ldquo;<em>unsupervised</em>&rdquo; means that we are not supervising the algorithm by providing the correct output for every input, instead, we let the algorithm to figure out the output by itself.</p>
+<p>Types of unsupervised learning:</p>
+<ul>
+<li><em>Clustering</em>: The algorithm groups the input data into clusters.</li>
+<li><em>Anomaly detection</em>: This type of algorithms are used to detect unusual events.</li>
+<li><em>Dimensionality reduction</em>: It takes a big data set and compress it to a much smaller dataset while losing as little information as possible.</li>
+</ul>
+<h1 id=references>References</h1>
+<p>The content of this note is generated from <a href="https://www.coursera.org/learn/machine-learning?specialization=machine-learning-introduction">
+Supervised Machine Learning: Regression and Classification</a></p>
+</section>
+</article>
+</main>
+<footer>
+<div style=display:flex></div>
+<div class=footer-info>
+2023 © Youniverse | <a href=https://github.com/athul/archie>Archie Theme</a> | Built with <a href=https://gohugo.io>Hugo</a>
+</div>
+</footer>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RL13TTEB64"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-RL13TTEB64',{anonymize_ip:!1})}</script>
+</div>
+</body>
+</html>
