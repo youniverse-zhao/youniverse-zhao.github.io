@@ -1,4 +1,107 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Youniverse</title><link>https://youniverse.site/posts/</link><description>Recent content in Posts on Youniverse</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 30 Dec 2022 14:10:34 +1100</lastBuildDate><atom:link href="https://youniverse.site/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Coursera | Machine Learning Specialisation (1/n)</title><link>https://youniverse.site/posts/2022/12/coursera-machine-learning-specialisation-1/n/</link><pubDate>Fri, 30 Dec 2022 14:10:34 +1100</pubDate><guid>https://youniverse.site/posts/2022/12/coursera-machine-learning-specialisation-1/n/</guid><description>Recently, I&amp;rsquo;m thinking of picking up machine learning and it maybe interesting to work on some toy projects, started working on the Machine Learning Specialisation on Coursera. To me, Prof. Andrew Ng&amp;rsquo;s Machine Learning course on Coursera is one of the go-to material to getting start with Machine Learning. This is my second time learning this course on Coursera, and the first time I did it, it was not yet a specialisation.</description><content type="html"><![CDATA[<p>Recently, I&rsquo;m thinking of picking up machine learning and it maybe interesting to work on some toy projects, started working on the Machine Learning Specialisation on Coursera. To me, Prof. Andrew Ng&rsquo;s <a href="https://www.coursera.org/specializations/machine-learning-introduction">Machine Learning course on Coursera</a> is one of the go-to material to getting start with Machine Learning. This is my second time learning this course on Coursera, and the first time I did it, it was not yet a specialisation.</p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Youniverse</title><link>https://youniverse.site/posts/</link><description>Recent content in Posts on Youniverse</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 02 Jan 2023 15:11:00 +1100</lastBuildDate><atom:link href="https://youniverse.site/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Coursera | Machine Learning Specialisation (2/n) - Supervised Learning</title><link>https://youniverse.site/posts/2023/01/coursera-machine-learning-specialisation-2/n-supervised-learning/</link><pubDate>Mon, 02 Jan 2023 15:11:00 +1100</pubDate><guid>https://youniverse.site/posts/2023/01/coursera-machine-learning-specialisation-2/n-supervised-learning/</guid><description>Supervised Learning Definitions and Notations Lowercase $x$: the standard notation to denote input, or input variable, or feature; Lowercase $y$: the standard notation to denote output, or target variable; Training set: the dataset that is used to train a model, i.e., all training examples; $m$: the total number of training examples; $(x, y)$: a single training example; $(x^{(i)}, y^{(i)})$: a specific training example, corresponds to a specific row in a table.</description><content type="html"><![CDATA[<h2 id="supervised-learning">Supervised Learning</h2>
+<p><img src="./images/supervised-learning-overview.png" alt=""></p>
+<h3 id="definitions-and-notations">Definitions and Notations</h3>
+<ul>
+<li>Lowercase $x$: the standard notation to denote <strong>input</strong>, or <strong>input variable</strong>, or <strong>feature</strong>;</li>
+<li>Lowercase $y$: the standard notation to denote <strong>output</strong>, or <strong>target variable</strong>;</li>
+<li><strong>Training set</strong>: the dataset that is used to train a model, i.e., all training examples;</li>
+<li>$m$: the total number of training examples;</li>
+<li>$(x, y)$: a single training example;</li>
+<li>$(x^{(i)}, y^{(i)})$: a specific training example, corresponds to a specific row in a table.</li>
+<li>The superscript tells us that it refers to the $i$th training example;</li>
+</ul>
+<h3 id="the-model-function">The Model Function</h3>
+<p>ℹ️ When designing a <strong>learning algorithm</strong>, a key question is how to represent the <strong>model function</strong>, $f$. Or, in other words, what is the math formula for $f$?</p>
+<p>The model function, $f$, can be a <strong>linear function</strong>, such as $f = f_{w, b}(x) = w * x + b = \hat{y}$.</p>
+<ul>
+<li>❗️A &ldquo;linear function&rdquo; is a straight.</li>
+<li>$f$ is a function that takes $x$ as input and depending on the values of $w$ and $b$ outputs some value for $\hat{y}$.</li>
+<li>$w$ and $b$ are numbers and they are the parameters of the <strong>model</strong>. They determine the value of $\hat{y}$ given an input $x$.
+<ul>
+<li>$w$ is called <strong>weight</strong></li>
+<li>$b$ is called <strong>bias</strong></li>
+</ul>
+</li>
+</ul>
+<p>ℹ️ This model is called <strong>Linear regression</strong>, and this is a linear regression with a single variable, or <strong>univariate linear regression</strong>.</p>
+<ul>
+<li>&ldquo;One variable&rdquo; means that there is a single input variable.</li>
+<li>Linear regression is trying to fit a straight line to your data. It tries to predict a number with the fitted line.</li>
+</ul>
+<p>With the linear regression model, $f_{w, b}(x)$, given any $x^{(i)}$, the model makes a prediction for $y^{(i)}$, which is $\hat{y}^{(i)}$. I.e., given $(x^{(i)}, y^{(i)})$, $\hat{y}^{(i)} = f(x^{(i)}) = w * x^{(i)} + b$.</p>
+<h3 id="the-cost-function">The Cost Function</h3>
+<p>ℹ️ You also need to construct a <strong>cost function</strong>, which tells us how well a model is doing, so that we can try to improve its performance.</p>
+<p>ℹ️ How to measure how well a line fits the training data? One simple way is to use the <strong>squared error cost function</strong>:
+$$J(w,b) = \dfrac{1}{2m}\sum^m_{i = 1}(\hat{y}^{(i)} - y^{(i)})^2$$</p>
+<ul>
+<li>$\hat{y}^{(i)} - y^{(i)}$, the difference between the actual and the prediction is the <strong>error</strong>, indicating how far off the prediciton is from the target;</li>
+<li>$(\hat{y}^{(i)} - y^{(i)})^2$ is the squared difference;</li>
+<li>$m$ is the number of training examples;</li>
+<li>The cost is the sum of the errors across the entire training set for a given pair of $w$ and $b$.</li>
+</ul>
+<p>In machine learning, different people use different cost functions for different applications, but the squared error cost function is by far the most commonly used one for linear regression.</p>
+<h3 id="the-learning-algorithm">The Learning Algorithm</h3>
+<p>Once the model function and the cost function have both been defined, the learning algorithm tries to find values for the parameters $w$ and $b$ that makes the cost $J$ as small as possible, i.e., the learning algorithm is trying to find a straight line to fit the training set.</p>
+<p>For linear regression with the squared error cost function, there is always a single minimum, as it is a <strong>convex function</strong>. However, some other functions $J(w, b)$ may not be a convex function and they may not have a single minimum.</p>
+<p>We need an efficient algorithm that can be implemented in code to automatically find the values for $w$ and $b$ that give the best fit line.</p>
+<p>ℹ️ <strong>Gradient descent</strong> is an algorithm that can be used to minimise any function.</p>
+<p>Process:</p>
+<ol>
+<li>Start off with some random values for $w$ and $b$;</li>
+<li>With gradient descent, the values for $w$ and $b$ are getting updated depending on the corresponding cost $J(w, b)$;</li>
+<li>Step 2 goes on and on until the cost $J(w, b)$ settles at somewhere near the minimum.</li>
+</ol>
+<p>At Step 2, how are $w$ and $b$ get updated?</p>
+<p>With gradient descent, repeat the following updates until the algorithm converges. &ldquo;Converge&rdquo; means that a local minimum has been reached, i.e,. $w$ and $b$ no longer change much with each update.</p>
+<p>$$w = w - \alpha\dfrac{d}{dw}J(w,b) = \dfrac{1}{m}∑^m_{i=1}(f_{w,b}(x^{(i)}) - y^{(i)}) x^{(i)}$$
+$$b = b - \alpha\dfrac{d}{db}J(w,b) = \dfrac{1}{m}∑^m_{i=1}(f_{w,b}(x^{(i)}) - y^{(i)})$$</p>
+<h2 id="linear-regression">Linear Regression</h2>
+<p>ℹ️ Univariate linear regression is the simplest version of the linear regression model, a more general form is <strong>multiple linear regression</strong>, which has multiple input variables.</p>
+<h3 id="more-notations">More Notations</h3>
+<ul>
+<li>$n$: the number of features for each training example;</li>
+<li>$x^{(i)}$: denotes a specific training example, and in this case it is a list containing $n$ features;</li>
+<li>$x_j^{(i)}$: denotes the $j$th feature of the $i$th training example, i.e., $(x_1, x_2, &hellip;, x_n)$ represents a single training example;</li>
+</ul>
+<h3 id="the-model-function-1">The Model Function</h3>
+<p>Original version of the linear model function:</p>
+<p>$$f_{w,b}(x) = w * x + b$$</p>
+<p>An updated version of the linear model function for more than one input features:</p>
+<p>$$f_{w,b}(x) = w_1 * x_1 + w_2 * x_2 + &hellip; + w_b * x_n + b$$</p>
+<p>Equivaclently,</p>
+<p>$$f_{\vec w, b}(\vec x) = \vec w * \vec x + b$$</p>
+<ul>
+<li>$\vec w = [w_1, w_2, &hellip;, w_n]$ is a <strong>row vector</strong>;</li>
+<li>$b$ is a single number, called a <strong>scalar</strong>;</li>
+<li>$\vec x = [x_1, x_2, &hellip;, x_n]$ is a <strong>row vector</strong>;</li>
+<li>The $*$ in $\vec w * \vec x$ is the <strong>dot product</strong> in linear algebra.</li>
+</ul>
+<h3 id="the-cost-function-1">The Cost Function</h3>
+<p>The cost function for multiple linear regression is also:</p>
+<p>$$J(w,b) = \dfrac{1}{2m}\sum^m_{i = 1}(\hat{y}^{(i)} - y^{(i)})^2$$</p>
+<p>It is just the prediction $\hat{y}$ is calculated with the new model function with multiple input features.</p>
+<p>$$\hat{y} = f_{\vec w, b}(\vec x) = \vec w * \vec x + b$$</p>
+<h3 id="the-learning-algorithm-1">The Learning Algorithm</h3>
+<p>We are still using gradient descent as the learning algorithm. However, this time, we need to update $w_j$ for each of the $n$ input features.</p>
+<p>$$
+\begin{aligned}
+w_j &amp;= w_j - \alpha\dfrac{d}{dw_j}J(\vec w, b) \\
+&amp;= w_j - \alpha\dfrac{1}{m}\sum^m_{i = 1}(f_{\vec w, b}(x^{(i)}) - y^{(i)})x_j^{(i)} \\
+\end{aligned}
+$$</p>
+<ul>
+<li>where $j = 1, 2, &hellip;, n$</li>
+</ul>
+<p>$$
+\begin{aligned}
+b &amp;= b - \alpha\dfrac{d}{db}J(\vec w, b) \\
+&amp;=b - \alpha\dfrac{1}{m}\sum^m_{i = 1}(f_{\vec w, b}(x^{(i)}) - y^{(i)}) \\
+\end{aligned}
+$$</p>
+<h1 id="references">References</h1>
+<p>The content of this note is generated from <a href="https://www.coursera.org/learn/machine-learning?specialization=machine-learning-introduction">
+Supervised Machine Learning: Regression and Classification</a></p>
+]]></content></item><item><title>Coursera | Machine Learning Specialisation (1/n)</title><link>https://youniverse.site/posts/2022/12/coursera-machine-learning-specialisation-1/n/</link><pubDate>Fri, 30 Dec 2022 14:10:34 +1100</pubDate><guid>https://youniverse.site/posts/2022/12/coursera-machine-learning-specialisation-1/n/</guid><description>Recently, I&amp;rsquo;m thinking of picking up machine learning and it maybe interesting to work on some toy projects, started working on the Machine Learning Specialisation on Coursera. To me, Prof. Andrew Ng&amp;rsquo;s Machine Learning course on Coursera is one of the go-to material to getting start with Machine Learning. This is my second time learning this course on Coursera, and the first time I did it, it was not yet a specialisation.</description><content type="html"><![CDATA[<p>Recently, I&rsquo;m thinking of picking up machine learning and it maybe interesting to work on some toy projects, started working on the Machine Learning Specialisation on Coursera. To me, Prof. Andrew Ng&rsquo;s <a href="https://www.coursera.org/specializations/machine-learning-introduction">Machine Learning course on Coursera</a> is one of the go-to material to getting start with Machine Learning. This is my second time learning this course on Coursera, and the first time I did it, it was not yet a specialisation.</p>
 <p>👉 <em>There are certainly other materials online that can be used to start your machine learning journey, but to me, this specialisation on Coursera is the simplest for me to get my first touch of machine learn. I don&rsquo;t need to think really hard to understand its content and it is much shorter compared to other materials.</em></p>
 <p>The current version is a specialisation consisting three courses:</p>
 <ul>
