@@ -2,25 +2,50 @@
 <p>👉 <em>There are certainly other materials online that can be used to start my machine learning journey, but to me, this specialisation on Coursera is the simplest to get my first touch of machine learning. I don&rsquo;t need to think really hard to understand its content and it is much shorter compared to other materials.</em></p>
 ]]></content></item><item><title>📚 | Show Your Work</title><link>https://youniverse.site/posts/2023/01/show-your-work/</link><pubDate>Tue, 03 Jan 2023 22:39:35 +1100</pubDate><guid>https://youniverse.site/posts/2023/01/show-your-work/</guid><description>&amp;ldquo;Build sharing into my routine.&amp;rdquo;</description><content type="html"><![CDATA[<p><img src="./images/bookcover-show-your-work.jpg" alt=""></p>
 <p>&ldquo;Build sharing into my routine.&rdquo;</p>
-]]></content></item><item><title>Coursera | Machine Learning Specialisation (2/n) - Supervised Learning</title><link>https://youniverse.site/posts/2023/01/coursera-machine-learning-specialisation-2/n-supervised-learning/</link><pubDate>Mon, 02 Jan 2023 15:11:00 +1100</pubDate><guid>https://youniverse.site/posts/2023/01/coursera-machine-learning-specialisation-2/n-supervised-learning/</guid><description>Supervised Learning Definitions and Notations Lowercase $x$: the standard notation to denote input, or input variable, or feature; Lowercase $y$: the standard notation to denote output, or target variable; Training set: the dataset that is used to train a model, i.e., all training examples; $m$: the total number of training examples; $(x, y)$: a single training example; $(x^{(i)}, y^{(i)})$: a specific training example, corresponds to a specific row in a table.</description><content type="html"><![CDATA[<h2 id="supervised-learning">Supervised Learning</h2>
+]]></content></item><item><title>Coursera | Machine Learning Specialisation (2/n) - Supervised Learning</title><link>https://youniverse.site/posts/2023/01/coursera-machine-learning-specialisation-2/n-supervised-learning/</link><pubDate>Mon, 02 Jan 2023 15:11:00 +1100</pubDate><guid>https://youniverse.site/posts/2023/01/coursera-machine-learning-specialisation-2/n-supervised-learning/</guid><description>Supervised Learning ℹ️ *Supervised machine learning*, or *supervised learning*, refers to algorithms that learn the input to output, or $x$ to $y$, mapping.
+The key characteristic of supervised learning is that you give your learning algorithm examples to learn from, i.e., the training set, which include the right answers, i.e., the correct label $y$ for a given input $x$. With the correct pairs of input $x$ and desired output label $y$, the learning algorithm learns to take just the input alone without the output label and gives a reasonably accurate prediction of the output.</description><content type="html"><![CDATA[<h2 id="supervised-learning">Supervised Learning</h2>
+<p>ℹ️ <em><strong>*Supervised machine learning*</strong></em>, or <em><strong>*supervised learning*</strong></em>, refers to algorithms that learn the input to output, or $x$ to $y$, mapping.</p>
+<p>The key characteristic of supervised learning is that you give your learning algorithm examples to learn from, i.e., the <strong>training set</strong>, which include the right answers, i.e., the correct label $y$ for a given input $x$. With the correct pairs of input $x$ and desired output label $y$, the <strong>learning algorithm</strong> learns to take just the input alone without the output label and gives a reasonably accurate prediction of the output. This means, with supervised learning, you have to &ldquo;train your model&rdquo; with some example data containing both the input $x$ and the ideal output $y$. Then, once your model is &ldquo;trained&rdquo;, you can use it to take unseen input $x$ to predict the corresponding output.</p>
 <p><img src="./images/supervised-learning-overview.png" alt=""></p>
 <h3 id="definitions-and-notations">Definitions and Notations</h3>
 <ul>
+<li>
+<p><strong>Training set</strong>: the dataset that is used to train a model, i.e., all training examples;</p>
+</li>
+<li>
+<p>$(x, y)$: a single training example;</p>
+<ul>
 <li>Lowercase $x$: the standard notation to denote <strong>input</strong>, or <strong>input variable</strong>, or <strong>feature</strong>;</li>
 <li>Lowercase $y$: the standard notation to denote <strong>output</strong>, or <strong>target variable</strong>;</li>
-<li><strong>Training set</strong>: the dataset that is used to train a model, i.e., all training examples;</li>
-<li>$m$: the total number of training examples;</li>
-<li>$(x, y)$: a single training example;</li>
-<li>$(x^{(i)}, y^{(i)})$: a specific training example, corresponds to a specific row in a table.</li>
+</ul>
+</li>
+<li>
+<p>$(x^{(i)}, y^{(i)})$: a specific training example, corresponds to a specific row in a table.</p>
+<ul>
 <li>The superscript tells us that it refers to the $i$th training example;</li>
+</ul>
+</li>
+<li>
+<p>$m$: the total number of training examples;</p>
+</li>
 </ul>
 <h3 id="the-model-function">The Model Function</h3>
 <p>ℹ️ When designing a <strong>learning algorithm</strong>, a key question is how to represent the <strong>model function</strong>, $f$. Or, in other words, what is the math formula for $f$?</p>
-<p>The model function, $f$, can be a <strong>linear function</strong>, such as $f = f_{w, b}(x) = w * x + b = \hat{y}$.</p>
+<h3 id="the-cost-function">The Cost Function</h3>
+<p>ℹ️ You also need to construct a <strong>cost function</strong>, $J(w, b)$, which tells us how well a model is doing, so that we can try to improve its performance.</p>
+<p>Specifically, the cost function, $J(w, b)$, tells us how big the difference is between the predicted value, $\hat{y}$, and the correct value, $y$, given the model parameters $w$ and $b$.</p>
+<h3 id="the-learning-algorithm">The Learning Algorithm</h3>
+<p>Once the model function and the cost function have both been defined, the learning algorithm tries to find values for the parameters $w$ and $b$ that makes the cost $J(w, b)$ as small as possible, i.e., the learning algorithm is trying to find a straight line to fit the training set.</p>
+<h2 id="linear-regression">Linear Regression</h2>
+<h3 id="univariate-linear-regression">Univariate Linear Regression</h3>
+<h4 id="the-model-function-1">The Model Function</h4>
+<p>The model function, $f$, can be a <strong>linear function</strong>, such as:
+$$f = f_{w, b}(x) = w * x + b = \hat{y}$$</p>
 <ul>
-<li>❗️A &ldquo;linear function&rdquo; is a straight.</li>
-<li>$f$ is a function that takes $x$ as input and depending on the values of $w$ and $b$ outputs some value for $\hat{y}$.</li>
-<li>$w$ and $b$ are numbers and they are the parameters of the <strong>model</strong>. They determine the value of $\hat{y}$ given an input $x$.
+<li>❗️A &ldquo;linear function&rdquo; is a straight line.</li>
+<li>$f$ is a function that takes $x$ as input and, depending on the values of $w$ and $b$, outputs some value for $\hat{y}$.</li>
+<li>$w$ and $b$ are numbers and they are the parameters of the <strong>model</strong>.
+They determine the value of $\hat{y}$ given an input $x$.
 <ul>
 <li>$w$ is called <strong>weight</strong></li>
 <li>$b$ is called <strong>bias</strong></li>
@@ -30,11 +55,10 @@
 <p>ℹ️ This model is called <strong>Linear regression</strong>, and this is a linear regression with a single variable, or <strong>univariate linear regression</strong>.</p>
 <ul>
 <li>&ldquo;One variable&rdquo; means that there is a single input variable.</li>
-<li>Linear regression is trying to fit a straight line to your data. It tries to predict a number with the fitted line.</li>
+<li>❗️Linear regression is trying to fit a straight line to your data. It tries to predict a number with the fitted line.</li>
 </ul>
 <p>With the linear regression model, $f_{w, b}(x)$, given any $x^{(i)}$, the model makes a prediction for $y^{(i)}$, which is $\hat{y}^{(i)}$. I.e., given $(x^{(i)}, y^{(i)})$, $\hat{y}^{(i)} = f(x^{(i)}) = w * x^{(i)} + b$.</p>
-<h3 id="the-cost-function">The Cost Function</h3>
-<p>ℹ️ You also need to construct a <strong>cost function</strong>, which tells us how well a model is doing, so that we can try to improve its performance.</p>
+<h4 id="the-cost-function-1">The Cost Function</h4>
 <p>ℹ️ How to measure how well a line fits the training data? One simple way is to use the <strong>squared error cost function</strong>:
 $$J(w,b) = \dfrac{1}{2m}\sum^m_{i = 1}(\hat{y}^{(i)} - y^{(i)})^2$$</p>
 <ul>
@@ -44,8 +68,7 @@ $$J(w,b) = \dfrac{1}{2m}\sum^m_{i = 1}(\hat{y}^{(i)} - y^{(i)})^2$$</p>
 <li>The cost is the sum of the errors across the entire training set for a given pair of $w$ and $b$.</li>
 </ul>
 <p>In machine learning, different people use different cost functions for different applications, but the squared error cost function is by far the most commonly used one for linear regression.</p>
-<h3 id="the-learning-algorithm">The Learning Algorithm</h3>
-<p>Once the model function and the cost function have both been defined, the learning algorithm tries to find values for the parameters $w$ and $b$ that makes the cost $J$ as small as possible, i.e., the learning algorithm is trying to find a straight line to fit the training set.</p>
+<h4 id="the-learning-algorithm-1">The Learning Algorithm</h4>
 <p>For linear regression with the squared error cost function, there is always a single minimum, as it is a <strong>convex function</strong>. However, some other functions $J(w, b)$ may not be a convex function and they may not have a single minimum.</p>
 <p>We need an efficient algorithm that can be implemented in code to automatically find the values for $w$ and $b$ that give the best fit line.</p>
 <p>ℹ️ <strong>Gradient descent</strong> is an algorithm that can be used to minimise any function.</p>
@@ -56,18 +79,21 @@ $$J(w,b) = \dfrac{1}{2m}\sum^m_{i = 1}(\hat{y}^{(i)} - y^{(i)})^2$$</p>
 <li>Step 2 goes on and on until the cost $J(w, b)$ settles at somewhere near the minimum.</li>
 </ol>
 <p>At Step 2, how are $w$ and $b$ get updated?</p>
-<p>With gradient descent, repeat the following updates until the algorithm converges. &ldquo;Converge&rdquo; means that a local minimum has been reached, i.e,. $w$ and $b$ no longer change much with each update.</p>
+<p>With gradient descent, repeat the following updates until the algorithm converges.</p>
+<ul>
+<li>&ldquo;Converge&rdquo; means that a local minimum has been reached, i.e,. $w$ and $b$ no longer change much with each update.</li>
+</ul>
 <p>$$w = w - \alpha\dfrac{d}{dw}J(w,b) = \dfrac{1}{m}∑^m_{i=1}(f_{w,b}(x^{(i)}) - y^{(i)}) x^{(i)}$$
 $$b = b - \alpha\dfrac{d}{db}J(w,b) = \dfrac{1}{m}∑^m_{i=1}(f_{w,b}(x^{(i)}) - y^{(i)})$$</p>
-<h2 id="linear-regression">Linear Regression</h2>
+<h3 id="multiple-linear-regression">Multiple Linear Regression</h3>
 <p>ℹ️ Univariate linear regression is the simplest version of the linear regression model, a more general form is <strong>multiple linear regression</strong>, which has multiple input variables.</p>
-<h3 id="more-notations">More Notations</h3>
+<h4 id="more-notations">More Notations</h4>
 <ul>
 <li>$n$: the number of features for each training example;</li>
 <li>$x^{(i)}$: denotes a specific training example, and in this case it is a list containing $n$ features;</li>
 <li>$x_j^{(i)}$: denotes the $j$th feature of the $i$th training example, i.e., $(x_1, x_2, &hellip;, x_n)$ represents a single training example;</li>
 </ul>
-<h3 id="the-model-function-1">The Model Function</h3>
+<h4 id="the-model-function-2">The Model Function</h4>
 <p>Original version of the linear model function:</p>
 <p>$$f_{w,b}(x) = w * x + b$$</p>
 <p>An updated version of the linear model function for more than one input features:</p>
@@ -80,12 +106,12 @@ $$b = b - \alpha\dfrac{d}{db}J(w,b) = \dfrac{1}{m}∑^m_{i=1}(f_{w,b}(x^{(i)}) -
 <li>$\vec x = [x_1, x_2, &hellip;, x_n]$ is a <strong>row vector</strong>;</li>
 <li>The $*$ in $\vec w * \vec x$ is the <strong>dot product</strong> in linear algebra.</li>
 </ul>
-<h3 id="the-cost-function-1">The Cost Function</h3>
+<h4 id="the-cost-function-2">The Cost Function</h4>
 <p>The cost function for multiple linear regression is also:</p>
 <p>$$J(w,b) = \dfrac{1}{2m}\sum^m_{i = 1}(\hat{y}^{(i)} - y^{(i)})^2$$</p>
 <p>It is just the prediction $\hat{y}$ is calculated with the new model function with multiple input features.</p>
 <p>$$\hat{y} = f_{\vec w, b}(\vec x) = \vec w * \vec x + b$$</p>
-<h3 id="the-learning-algorithm-1">The Learning Algorithm</h3>
+<h4 id="the-learning-algorithm-2">The Learning Algorithm</h4>
 <p>We are still using gradient descent as the learning algorithm. However, this time, we need to update $w_j$ for each of the $n$ input features.</p>
 <p>$$
 \begin{aligned}
@@ -105,7 +131,7 @@ $$</p>
 <h1 id="references">References</h1>
 <p>The content of this note is generated from <a href="https://www.coursera.org/learn/machine-learning?specialization=machine-learning-introduction">
 Supervised Machine Learning: Regression and Classification</a></p>
-]]></content></item><item><title>Coursera | Machine Learning Specialisation (1/n)</title><link>https://youniverse.site/posts/2022/12/coursera-machine-learning-specialisation-1/n/</link><pubDate>Fri, 30 Dec 2022 14:10:34 +1100</pubDate><guid>https://youniverse.site/posts/2022/12/coursera-machine-learning-specialisation-1/n/</guid><description>The current version is a specialisation consisting three courses:
+]]></content></item><item><title>Coursera | Machine Learning Specialisation (1/n) - Overview</title><link>https://youniverse.site/posts/2022/12/coursera-machine-learning-specialisation-1/n-overview/</link><pubDate>Fri, 30 Dec 2022 14:10:34 +1100</pubDate><guid>https://youniverse.site/posts/2022/12/coursera-machine-learning-specialisation-1/n-overview/</guid><description>The current version is a specialisation consisting three courses:
 Supervised Machine Learning: Regression and Classification; Advanced Learning Algorithms; Unsupervised Learning, Recommenders, Reinforcement Learning. This article is a brief summary of Machine Learning taken from the specialisation.
 The first course in the specialisation, &amp;ldquo;Supervised Machine Learning: Regression and Classification&amp;rdquo;, provides a brief summary of the machine learning domain and goes introduces the details of supervised machine learning.
 Machine Learning ℹ️ Machine learning (ML) is the science of getting computers to learn without being explicitly programmed.</description><content type="html"><![CDATA[<p>The current version is a specialisation consisting three courses:</p>
