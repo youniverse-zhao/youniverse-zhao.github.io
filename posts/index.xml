@@ -7,6 +7,7 @@ The key characteristic of supervised learning is that you give your learning alg
 <p>ℹ️ <em><strong>*Supervised machine learning*</strong></em>, or <em><strong>*supervised learning*</strong></em>, refers to algorithms that learn the input to output, or $x$ to $y$, mapping.</p>
 <p>The key characteristic of supervised learning is that you give your learning algorithm examples to learn from, i.e., the <strong>training set</strong>, which include the right answers, i.e., the correct label $y$ for a given input $x$. With the correct pairs of input $x$ and desired output label $y$, the <strong>learning algorithm</strong> learns to take just the input alone without the output label and gives a reasonably accurate prediction of the output. This means, with supervised learning, you have to &ldquo;train your model&rdquo; with some example data containing both the input $x$ and the ideal output $y$. Then, once your model is &ldquo;trained&rdquo;, you can use it to take unseen input $x$ to predict the corresponding output.</p>
 <p><img src="./images/supervised-learning-overview.png" alt=""></p>
+<p>👉 <em>This diagram is not a very good illustration as I was trying to pack information from different aspects into a single diagram. I may need to split it into different components and diagrams for different machine learning steps.</em></p>
 <h3 id="definitions-and-notations">Definitions and Notations</h3>
 <ul>
 <li>
@@ -30,17 +31,22 @@ The key characteristic of supervised learning is that you give your learning alg
 </li>
 </ul>
 <h3 id="the-model-function">The Model Function</h3>
-<p>ℹ️ When designing a <strong>learning algorithm</strong>, a key question is how to represent the <strong>model function</strong>, $f$. Or, in other words, what is the math formula for $f$?</p>
+<p>ℹ️ When designing a <strong>learning algorithm</strong>, a key question is how to represent the <strong>model function</strong> (or <strong>model</strong> or <strong>hypothesis</strong>), $f$. Or, in other words, what is the math formula for $f$?</p>
+<ul>
+<li>❓How do I know what model function I should use? Does it have to be based on experience or it can be determined systematically?</li>
+</ul>
 <h3 id="the-cost-function">The Cost Function</h3>
 <p>ℹ️ You also need to construct a <strong>cost function</strong>, $J(w, b)$, which tells us how well a model is doing, so that we can try to improve its performance.</p>
 <p>Specifically, the cost function, $J(w, b)$, tells us how big the difference is between the predicted value, $\hat{y}$, and the correct value, $y$, given the model parameters $w$ and $b$.</p>
+<p>❗️The idea of a cost function is one of the most universal and important ideas in machine learning, and is used in both linear regression and many of the most advanced AI models in the world.</p>
 <h3 id="the-learning-algorithm">The Learning Algorithm</h3>
 <p>Once the model function and the cost function have both been defined, the learning algorithm tries to find values for the parameters $w$ and $b$ that makes the cost $J(w, b)$ as small as possible, i.e., the learning algorithm is trying to find a straight line to fit the training set.</p>
 <h2 id="linear-regression">Linear Regression</h2>
 <h3 id="univariate-linear-regression">Univariate Linear Regression</h3>
+<p>ℹ️ <strong>Univariate linear regression</strong> is a linear model with one input variable.</p>
 <h4 id="the-model-function-1">The Model Function</h4>
 <p>The model function, $f$, can be a <strong>linear function</strong>, such as:
-$$f = f_{w, b}(x) = w * x + b = \hat{y}$$</p>
+$$\hat{y} = f_{w, b}(x) = w * x + b$$</p>
 <ul>
 <li>❗️A &ldquo;linear function&rdquo; is a straight line.</li>
 <li>$f$ is a function that takes $x$ as input and, depending on the values of $w$ and $b$, outputs some value for $\hat{y}$.</li>
@@ -60,31 +66,63 @@ They determine the value of $\hat{y}$ given an input $x$.
 <p>With the linear regression model, $f_{w, b}(x)$, given any $x^{(i)}$, the model makes a prediction for $y^{(i)}$, which is $\hat{y}^{(i)}$. I.e., given $(x^{(i)}, y^{(i)})$, $\hat{y}^{(i)} = f(x^{(i)}) = w * x^{(i)} + b$.</p>
 <h4 id="the-cost-function-1">The Cost Function</h4>
 <p>ℹ️ How to measure how well a line fits the training data? One simple way is to use the <strong>squared error cost function</strong>:
-$$J(w,b) = \dfrac{1}{2m}\sum^m_{i = 1}(\hat{y}^{(i)} - y^{(i)})^2$$</p>
+$$
+\begin{aligned}
+J(w,b) &amp;= \dfrac{1}{2m}\sum^m_{i = 1}(\hat{y}^{(i)} - y^{(i)})^2 \ &amp;= \dfrac{1}{2m}\sum^m_{i = 1}(f_{w, b}(x) - y^{(i)})^2 \text{\ \ \ (univariate linear regression)}
+\end{aligned}
+$$</p>
 <ul>
-<li>$\hat{y}^{(i)} - y^{(i)}$, the difference between the actual and the prediction is the <strong>error</strong>, indicating how far off the prediciton is from the target;</li>
+<li>$\hat{y}^{(i)} - y^{(i)}$ is the <strong>error</strong>, i.e., the difference between the actual and the prediction, indicating how far off the prediciton is from the target;</li>
 <li>$(\hat{y}^{(i)} - y^{(i)})^2$ is the squared difference;</li>
 <li>$m$ is the number of training examples;</li>
-<li>The cost is the sum of the errors across the entire training set for a given pair of $w$ and $b$.</li>
+<li>The squared differences are summed over all the $m$ training examples and divided by $2m$ to produce the cost, $J(w, b)$.</li>
 </ul>
 <p>In machine learning, different people use different cost functions for different applications, but the squared error cost function is by far the most commonly used one for linear regression.</p>
 <h4 id="the-learning-algorithm-1">The Learning Algorithm</h4>
 <p>For linear regression with the squared error cost function, there is always a single minimum, as it is a <strong>convex function</strong>. However, some other functions $J(w, b)$ may not be a convex function and they may not have a single minimum.</p>
 <p>We need an efficient algorithm that can be implemented in code to automatically find the values for $w$ and $b$ that give the best fit line.</p>
 <p>ℹ️ <strong>Gradient descent</strong> is an algorithm that can be used to minimise any function.</p>
+<p>We use gradient descent to find a pair of parameters $w$ and $b$, with which we can make the predicted value, $\hat{y}$, as close to the correct value, $y$, as possible. With a given pair of $w$ and $b$, we check how accurate the prediciton is using the cost function, $J(w, b)$, and update $w$ and $b$ based on the result, and then we check again. This sequence is repeated till $w$ and $b$ and make the prediction reasonably accurate.</p>
 <p>Process:</p>
 <ol>
 <li>Start off with some random values for $w$ and $b$;</li>
-<li>With gradient descent, the values for $w$ and $b$ are getting updated depending on the corresponding cost $J(w, b)$;</li>
+<li>With gradient descent, the values for $w$ and $b$ are getting updated depending on the corresponding cost $J(w, b)$;
+$$
+\begin{aligned}
+w &amp;= w - \alpha\dfrac{d}{dw}J(w,b) \ &amp;= w - \alpha\dfrac{1}{m}∑^m_{i=1}(f_{w,b}(x^{(i)}) - y^{(i)}) x^{(i)} \
+b &amp;= b - \alpha\dfrac{d}{db}J(w,b) \ &amp;= w - \alpha\dfrac{1}{m}∑^m_{i=1}(f_{w,b}(x^{(i)}) - y^{(i)})
+\end{aligned}
+$$
+<ul>
+<li>$\alpha$: the <strong>learning rate</strong>;
+<ul>
+<li>usually a small positive number between 0 and 1;</li>
+<li>controls how big a step is;</li>
+</ul>
+</li>
+<li>$\dfrac{d}{dw}J(w,b)$ and $\dfrac{d}{db}J(w,b)$: the <strong>derivative term</strong> of the cost function $J(w, b)$;
+<ul>
+<li>indicates the direction in which to take the steps;</li>
+<li>comes from calculus;</li>
+</ul>
+</li>
+<li>This version of gradient descent is called <strong>batch gradient descent</strong>, as on every step, we are looking at all of the training examples, instead of just a subset of them;</li>
+</ul>
+</li>
 <li>Step 2 goes on and on until the cost $J(w, b)$ settles at somewhere near the minimum.</li>
 </ol>
-<p>At Step 2, how are $w$ and $b$ get updated?</p>
-<p>With gradient descent, repeat the following updates until the algorithm converges.</p>
+<p>Gradient descent repeats the above updates until the algorithm converges.</p>
 <ul>
-<li>&ldquo;Converge&rdquo; means that a local minimum has been reached, i.e,. $w$ and $b$ no longer change much with each update.</li>
+<li>
+<p>&ldquo;Converge&rdquo; means that a local minimum has been reached, i.e., $w$ and $b$ no longer change much with each update.</p>
+</li>
+<li>
+<p>❓How is $\dfrac{d}{dw}J(w,b)$ and $\dfrac{d}{db}J(w,b)$ calculated?</p>
+</li>
+<li>
+<p>❓When should I stop updating $w$ and $b$, or when are they considered converged? How do I measure $w$ and $b$ no longer change much?</p>
+</li>
 </ul>
-<p>$$w = w - \alpha\dfrac{d}{dw}J(w,b) = \dfrac{1}{m}∑^m_{i=1}(f_{w,b}(x^{(i)}) - y^{(i)}) x^{(i)}$$
-$$b = b - \alpha\dfrac{d}{db}J(w,b) = \dfrac{1}{m}∑^m_{i=1}(f_{w,b}(x^{(i)}) - y^{(i)})$$</p>
 <h3 id="multiple-linear-regression">Multiple Linear Regression</h3>
 <p>ℹ️ Univariate linear regression is the simplest version of the linear regression model, a more general form is <strong>multiple linear regression</strong>, which has multiple input variables.</p>
 <h4 id="more-notations">More Notations</h4>
@@ -150,6 +188,11 @@ Machine Learning ℹ️ Machine learning (ML) is the science of getting computer
 <ul>
 <li><em>Supervised learning</em></li>
 <li><em>Unsupervised learning</em></li>
+</ul>
+<p>Others</p>
+<ul>
+<li>Recommender systems</li>
+<li>Reinforcement learning</li>
 </ul>
 <h2 id="supervised-learning">Supervised Learning</h2>
 <p>ℹ️ <strong>Supervised machine learning</strong>, or <strong>supervised learning</strong>, refers to algorithms that learn the input to output, or $x$ to $y$, mapping.</p>
