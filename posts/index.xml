@@ -2,9 +2,9 @@
 <p>👉 <em>There are certainly other materials online that can be used to start my machine learning journey, but to me, this specialisation on Coursera is the simplest to get my first touch of machine learning. I don&rsquo;t need to think really hard to understand its content and it is much shorter compared to other materials.</em></p>
 ]]></content></item><item><title>📚 | Show Your Work</title><link>https://youniverse.site/posts/2023/01/show-your-work/</link><pubDate>Tue, 03 Jan 2023 22:39:35 +1100</pubDate><guid>https://youniverse.site/posts/2023/01/show-your-work/</guid><description>&amp;ldquo;Build sharing into my routine.&amp;rdquo;</description><content type="html"><![CDATA[<p><img src="./images/bookcover-show-your-work.jpg" alt=""></p>
 <p>&ldquo;Build sharing into my routine.&rdquo;</p>
-]]></content></item><item><title>Coursera | Machine Learning Specialisation (2/n) - Supervised Learning</title><link>https://youniverse.site/posts/2023/01/coursera-machine-learning-specialisation-2/n-supervised-learning/</link><pubDate>Mon, 02 Jan 2023 15:11:00 +1100</pubDate><guid>https://youniverse.site/posts/2023/01/coursera-machine-learning-specialisation-2/n-supervised-learning/</guid><description>Supervised Learning ℹ️ *Supervised machine learning*, or *supervised learning*, refers to algorithms that learn the input to output, or $x$ to $y$, mapping.
+]]></content></item><item><title>Coursera | Machine Learning Specialisation (2/n) - Supervised Learning</title><link>https://youniverse.site/posts/2023/01/coursera-machine-learning-specialisation-2/n-supervised-learning/</link><pubDate>Mon, 02 Jan 2023 15:11:00 +1100</pubDate><guid>https://youniverse.site/posts/2023/01/coursera-machine-learning-specialisation-2/n-supervised-learning/</guid><description>Supervised Learning ℹ️ Supervised machine learning, or supervised learning, refers to algorithms that learn the input to output, or $x$ to $y$, mapping.
 The key characteristic of supervised learning is that you give your learning algorithm examples to learn from, i.e., the training set, which include the right answers, i.e., the correct label $y$ for a given input $x$. With the correct pairs of input $x$ and desired output label $y$, the learning algorithm learns to take just the input alone without the output label and gives a reasonably accurate prediction of the output.</description><content type="html"><![CDATA[<h2 id="supervised-learning">Supervised Learning</h2>
-<p>ℹ️ <em><strong>*Supervised machine learning*</strong></em>, or <em><strong>*supervised learning*</strong></em>, refers to algorithms that learn the input to output, or $x$ to $y$, mapping.</p>
+<p>ℹ️ <em><strong>Supervised machine learning</strong></em>, or <em><strong>supervised learning</strong></em>, refers to algorithms that learn the input to output, or $x$ to $y$, mapping.</p>
 <p>The key characteristic of supervised learning is that you give your learning algorithm examples to learn from, i.e., the <strong>training set</strong>, which include the right answers, i.e., the correct label $y$ for a given input $x$. With the correct pairs of input $x$ and desired output label $y$, the <strong>learning algorithm</strong> learns to take just the input alone without the output label and gives a reasonably accurate prediction of the output. This means, with supervised learning, you have to &ldquo;train your model&rdquo; with some example data containing both the input $x$ and the ideal output $y$. Then, once your model is &ldquo;trained&rdquo;, you can use it to take unseen input $x$ to predict the corresponding output.</p>
 <p><img src="./images/supervised-learning-overview.png" alt=""></p>
 <p>👉 <em>This diagram is not a very good illustration as I was trying to pack information from different aspects into a single diagram. I may need to split it into different components and diagrams for different machine learning steps.</em></p>
@@ -131,11 +131,48 @@ $$
 <li>$x^{(i)}$: denotes a specific training example, and in this case it is a list containing $n$ features;</li>
 <li>$x_j^{(i)}$: denotes the $j$th feature of the $i$th training example, i.e., $(x_1, x_2, &hellip;, x_n)$ represents a single training example;</li>
 </ul>
+<h4 id="vectorisation">Vectorisation</h4>
+<p>$$
+f_{\vec w, b}(\vec x) = w_1 * x_1 + w_2 * x_2 + &hellip; + w_ * x_n + b
+$$</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>f <span style="color:#f92672">=</span> w[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> x[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>    w[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> x[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>    w[N] <span style="color:#f92672">*</span> x[N] <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>    b
+</span></span></code></pre></div><hr>
+<p>$$
+f_{\vec w, b}(\vec x) = \sum^n_{j = 1}w_j * x_j + b
+$$</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>f <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(n):
+</span></span><span style="display:flex;"><span>  f <span style="color:#f92672">=</span> f <span style="color:#f92672">+</span> w[j] <span style="color:#f92672">*</span> x[j]
+</span></span><span style="display:flex;"><span>f <span style="color:#f92672">=</span> f <span style="color:#f92672">+</span> b
+</span></span></code></pre></div><hr>
+<p>$$
+f_{\vec w, b}(\vec x) = \vec w * \vec x + b
+$$</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>f <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>dot(w, x) <span style="color:#f92672">+</span> b
+</span></span></code></pre></div><ul>
+<li>
+<p><code>np.dot</code> is a vectorised implementation of the dot product operation between two vectors;
+$$
+\begin{aligned}
+a * b
+&amp;= \begin{bmatrix} {a_0} \ {a_1} \ {a_2} \ {a_3} \end{bmatrix} * \begin{bmatrix} {b_0} \ {b_1} \ {b_2} \ {b_3} \end{bmatrix} \ \ \
+&amp;= \begin{bmatrix} a_0 * b_0 + a_1 * b_1 + a_2 * b_2 + a_3 * b_3 \end{bmatrix}
+\end{aligned}
+$$</p>
+</li>
+<li>
+<p>It runs much faster than the first two versions;</p>
+</li>
+</ul>
 <h4 id="the-model-function-2">The Model Function</h4>
 <p>Original version of the linear model function:</p>
 <p>$$f_{w,b}(x) = w * x + b$$</p>
 <p>An updated version of the linear model function for more than one input features:</p>
-<p>$$f_{w,b}(x) = w_1 * x_1 + w_2 * x_2 + &hellip; + w_b * x_n + b$$</p>
+<p>$$f_{w,b}(x) = w_1 * x_1 + w_2 * x_2 + &hellip; + w_ * x_n + b$$</p>
 <p>Equivaclently,</p>
 <p>$$f_{\vec w, b}(\vec x) = \vec w * \vec x + b$$</p>
 <ul>
@@ -145,7 +182,7 @@ $$
 <li>The $*$ in $\vec w * \vec x$ is the <strong>dot product</strong> in linear algebra.</li>
 </ul>
 <h4 id="the-cost-function-2">The Cost Function</h4>
-<p>The cost function for multiple linear regression is also:</p>
+<p>The cost function for multiple linear regression is still:</p>
 <p>$$J(w,b) = \dfrac{1}{2m}\sum^m_{i = 1}(\hat{y}^{(i)} - y^{(i)})^2$$</p>
 <p>It is just the prediction $\hat{y}$ is calculated with the new model function with multiple input features.</p>
 <p>$$\hat{y} = f_{\vec w, b}(\vec x) = \vec w * \vec x + b$$</p>
