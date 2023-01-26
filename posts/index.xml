@@ -223,13 +223,13 @@ Machine Learning ℹ️ Machine learning (ML) is the science of getting computer
 <p><img src="./images/machine-learning-overview.png" alt=""></p>
 <p>The two main types of machine learning:</p>
 <ul>
-<li><em>Supervised learning</em></li>
-<li><em>Unsupervised learning</em></li>
+<li><strong>Supervised learning</strong></li>
+<li><strong>Unsupervised learning</strong></li>
 </ul>
 <p>Others</p>
 <ul>
-<li>Recommender systems</li>
-<li>Reinforcement learning</li>
+<li><strong>Recommender systems</strong></li>
+<li><strong>Reinforcement learning</strong></li>
 </ul>
 <h2 id="supervised-learning">Supervised Learning</h2>
 <p>ℹ️ <strong>Supervised machine learning</strong>, or <strong>supervised learning</strong>, refers to algorithms that learn the input to output, or $x$ to $y$, mapping.</p>
