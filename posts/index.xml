@@ -206,21 +206,21 @@ $$</p>
 <h1 id="references">References</h1>
 <p>The content of this note is generated from <a href="https://www.coursera.org/learn/machine-learning?specialization=machine-learning-introduction">
 Supervised Machine Learning: Regression and Classification</a></p>
-]]></content></item><item><title>Coursera | Machine Learning Specialisation (1/n) - Overview</title><link>https://youniverse.site/posts/2022/12/coursera-machine-learning-specialisation-1/n-overview/</link><pubDate>Fri, 30 Dec 2022 14:10:34 +1100</pubDate><guid>https://youniverse.site/posts/2022/12/coursera-machine-learning-specialisation-1/n-overview/</guid><description>The current version is a specialisation consisting three courses:
+]]></content></item><item><title>Coursera | Machine Learning Specialisation (1/n) - Overview</title><link>https://youniverse.site/posts/2022/12/coursera-machine-learning-specialisation-1/n-overview/</link><pubDate>Fri, 30 Dec 2022 14:10:34 +1100</pubDate><guid>https://youniverse.site/posts/2022/12/coursera-machine-learning-specialisation-1/n-overview/</guid><description>The current version is a specialisation consisting of three courses:
 Supervised Machine Learning: Regression and Classification; Advanced Learning Algorithms; Unsupervised Learning, Recommenders, Reinforcement Learning. This article is a brief summary of Machine Learning taken from the specialisation.
-The first course in the specialisation, &amp;ldquo;Supervised Machine Learning: Regression and Classification&amp;rdquo;, provides a brief summary of the machine learning domain and goes introduces the details of supervised machine learning.
-Machine Learning ℹ️ Machine learning (ML) is the science of getting computers to learn without being explicitly programmed.</description><content type="html"><![CDATA[<p>The current version is a specialisation consisting three courses:</p>
+The first course in the specialisation, &amp;ldquo;Supervised Machine Learning: Regression and Classification&amp;rdquo;, provides a summary of the machine learning domain and introduces the details of supervised machine learning.
+Machine Learning ℹ️ Machine learning (ML) is the science of getting computers to learn without being explicitly programmed.</description><content type="html"><![CDATA[<p>The current version is a specialisation consisting of three courses:</p>
 <ul>
 <li>Supervised Machine Learning: Regression and Classification;</li>
 <li>Advanced Learning Algorithms;</li>
 <li>Unsupervised Learning, Recommenders, Reinforcement Learning.</li>
 </ul>
 <p>This article is a brief summary of Machine Learning taken from the specialisation.</p>
-<p>The first course in the specialisation, &ldquo;Supervised Machine Learning: Regression and Classification&rdquo;, provides a brief summary of the machine learning domain and goes introduces the details of supervised machine learning.</p>
-<p><img src="./images/machine-learning-overview.png" alt=""></p>
+<p>The first course in the specialisation, &ldquo;Supervised Machine Learning: Regression and Classification&rdquo;, provides a summary of the machine learning domain and introduces the details of supervised machine learning.</p>
 <h2 id="machine-learning">Machine Learning</h2>
 <p>ℹ️ <strong>Machine learning</strong> (<strong>ML</strong>) is the science of getting computers to learn without being explicitly programmed.</p>
-<p>💡 We use computers to simplify our lives, and we tell computers how to do things by programming against them. Some of the tasks can be translated into programs easily, however, there are ones that cannot be translated into programs easily. Those tasks that cannot be converted to programs easily are potential application domains of machine learing, where we tell computers to learn to do certain tasks by themselves.</p>
+<p>💡 We use computers to simplify our lives, and we tell computers how to do things by programming against them. <!-- raw HTML omitted -->Some of the tasks can be translated into programs easily, however, there are ones that cannot be translated into programs easily.<!-- raw HTML omitted --> Those tasks that cannot be converted to programs easily are potential application domains of machine learing, where we tell computers to learn to do certain tasks by themselves.</p>
+<p><img src="./images/machine-learning-overview.png" alt=""></p>
 <p>The two main types of machine learning:</p>
 <ul>
 <li><em>Supervised learning</em></li>
@@ -236,8 +236,8 @@ Machine Learning ℹ️ Machine learning (ML) is the science of getting computer
 <p>The key characteristic of supervised learning is that you give your learning algorithm examples to learn from. That includes the right answers, i.e., the correct label $y$ for a given input $x$. With the correct pairs of input $x$ and desired output label $y$, the learning algorithm learns to take just the input alone without the output label and gives a reasonably accurate prediction of the output. This means, with supervised learning, you have to &ldquo;train your model&rdquo; with some example data containing both the input $x$ and the ideal output $y$. Then, once your model is &ldquo;trained&rdquo;, you can use it to take unseen input $x$ to predict the corresponding output.</p>
 <p>There are two major types of supervised learning:</p>
 <ul>
-<li><em>Regression</em>: The target is to predict a number from infinitely posibilities.</li>
-<li><em>Classification</em>: The target is to predict a category from a smaller number of possibilities.</li>
+<li><strong>Regression</strong>: The target is to predict a number from infinitely posibilities.</li>
+<li><strong>Classification</strong>: The target is to predict a category from a smaller number of possibilities.</li>
 </ul>
 <h2 id="unsupervised-learning">Unsupervised Learning</h2>
 <p>ℹ️ The task of <strong>unsupervised learning</strong> is to find some structure or pattern or just discover something interesting within the data.</p>
@@ -245,13 +245,14 @@ Machine Learning ℹ️ Machine learning (ML) is the science of getting computer
 <p>❗️The word &ldquo;<em>unsupervised</em>&rdquo; means that we are not supervising the algorithm by providing the correct output for every input, instead, we let the algorithm to figure out the output by itself.</p>
 <p>Types of unsupervised learning:</p>
 <ul>
-<li><em>Clustering</em>: The algorithm groups the input data into clusters.</li>
-<li><em>Anomaly detection</em>: This type of algorithms are used to detect unusual events.</li>
-<li><em>Dimensionality reduction</em>: It takes a big data set and compress it to a much smaller dataset while losing as little information as possible.</li>
+<li><strong>Clustering</strong>: The algorithm groups the input data into clusters.</li>
+<li><strong>Anomaly detection</strong>: This type of algorithms are used to detect unusual events.</li>
+<li><strong>Dimensionality reduction</strong>: It takes a big data set and compress it to a much smaller dataset while losing as little information as possible.</li>
 </ul>
 <h1 id="references">References</h1>
 <p>The content of this note is generated from <a href="https://www.coursera.org/learn/machine-learning?specialization=machine-learning-introduction">
 Supervised Machine Learning: Regression and Classification</a></p>
+<p>[]:</p>
 ]]></content></item><item><title>YAK8s 101: 1 | What is K8s? [Note]</title><link>https://youniverse.site/posts/2021/09/yak8s-101-1-what-is-k8s-note/</link><pubDate>Wed, 08 Sep 2021 22:17:58 +1000</pubDate><guid>https://youniverse.site/posts/2021/09/yak8s-101-1-what-is-k8s-note/</guid><description>What is K8s? | Kubernetes is a platform to orchestrate containers.
 It looks like this:
 ref: Kubernetes Documentation (Kubernetes Components). Accessed 8 Sep 2021, https://kubernetes.io/docs/concepts/overview/components/</description><content type="html"><![CDATA[<h2 id="what-is-k8s">What is K8s?</h2>
