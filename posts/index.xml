@@ -208,6 +208,97 @@ b &amp;= b - \alpha\dfrac{d}{db}J(\vec w, b) \\
 &amp;=b - \alpha\dfrac{1}{m}\sum^m_{i = 1}(f_{\vec w, b}(x^{(i)}) - y^{(i)}) \\
 \end{aligned}
 $$</p>
+<h2 id="classification">Classification</h2>
+<p>ℹ️ <strong>Classification algorithms</strong> predict categories, where there are only a small number of possible output.</p>
+<p>ℹ️ <strong>Binary classification</strong> is a type of classification problem that only has two possible outputs.</p>
+<h4 id="the-model-function-3">The Model Function</h4>
+<p>The model is called <strong>logistic regression</strong>. Although the word &ldquo;regression&rdquo; is in its name, this model is used to do classification.</p>
+<p>The logistic regression make use of the sigmoid function (or logistic function), which takes an input and provides an output that is between $0$ and $1$.
+$$
+g(z) = \dfrac{1}{1 + e^{-z}}
+$$</p>
+<p>To build the model:</p>
+<ul>
+<li>
+<p>Start with the linear regression model, $f_{\vec w, b}(\vec x) = \vec w * \vec x + b$, and store its result as $z$;</p>
+</li>
+<li>
+<p>Apply the sigmoid function to $z$, the result of the linear regression model;
+$$
+\begin{aligned}
+g(z) &amp;= \dfrac{1}{1 + e^{-z}} \
+&amp;= g(f_{\vec w, b}(\vec x)) \
+&amp;= g(\vec w * \vec x + b) \</p>
+<p>&amp;= \dfrac{1}{1 + e^{-(\vec w * \vec x + b)}}
+\end{aligned}
+$$</p>
+</li>
+<li>
+<p>The final model function takes in a list of features $\vec x$, and outputs a value between $0$ and $1$:
+$$
+f_{\vec w, b}(\vec x) = \dfrac{1}{1 + e^{-(\vec w * \vec x + b)}}
+$$</p>
+<ul>
+<li>Here we redefine $f_{\vec w, b}(\vec x)$ to be the final model function.</li>
+</ul>
+</li>
+</ul>
+<p>Since the logistic function outputs a value between $0$ and $1$, logistic regression can be interpreted as the probability of an assertion is true.</p>
+<ul>
+<li>There are two possible outputs, hence $P(y = 0) + P(y = 1) = 1$</li>
+<li>The probability of $y = 1$ given the input features $\vec x$ and model parameters $w$ and $b$, or $f_{\vec w, b}(\vec x) = P(y = 1 | \vec x; \vec w, b)$;</li>
+</ul>
+<p>One thing to note is that the output of the logistic function is a value between $0$ and $1$, instead of the discrete categories $0$ or $1$. This requires a transformation from a value between $0$ and $1$ to either $0$  or $1$.</p>
+<ul>
+<li>We can achieve the transformation by setting a <strong>threshold</strong> or <strong>decision boundary</strong>, above which we set the final output as $1$, otherwise $0$;
+<ul>
+<li>A common decision boundary is $0.5$.</li>
+</ul>
+</li>
+</ul>
+<h4 id="the-cost-function-3">The Cost Function</h4>
+<p>The squared error cost function is not an ideal cost function for logistic regression, because when calculating the squared error of the output from the logistic function, the cost function is not convex, i.e., it has multiple optimal values for the parameters.</p>
+<p>We explicitly introduce the <strong>loss function</strong>, which measures how well the model is doing on a single input instance.</p>
+<ul>
+<li>The loss of a single input instance: $L(f_{\vec w, b}(\vec x^{(i)}), y^{(i)})$
+$$
+\begin{align}
+L(f_{\vec w,b}(\vec x^{(i)}), y^{(i)}) &amp;=
+\begin{cases}
+-log(f_{\vec w,b}(\vec x^{(i)}))\ if\  y^{(i)} = 1 \
+-log(1 - f_{\vec w,b}(\vec x^{(i)}))\ if\ y^{(i)} = 0
+\end{cases} \
+&amp;= -y^{(i)}log(f_{\vec w,b}(\vec x^{(i)})) - (1 - y^{(i)})log(1 - f_{\vec w,b}(\vec x^{(i)}))
+\end{align}
+$$</li>
+</ul>
+<p>By summing up the losses on all input instances, we get the cost function:
+$$
+\begin{align}
+J(\vec w, b) &amp;= \dfrac{1}{m}\sum^m_{i=1}L(f_{\vec w,b}(\vec x^{(i)}), y^{(i)}) \
+&amp;= -\dfrac{1}{m}\sum^{m}<em>{i=1}[y^{(i)}log(f</em>{\vec w,b}(\vec x^{(i)})) + (1 - y^{(i)})log(1 - f_{\vec w,b}(\vec x^{(i)}))]
+\end{align}
+$$</p>
+<ul>
+<li>This cost function is derived from statistics, using a principle called <strong>maximum likelihood estimation</strong>.</li>
+<li>This function is a convex function.</li>
+</ul>
+<h4 id="the-learning-algorithm-3">The Learning Algorithm</h4>
+<p>The gradient descent algorithm is still used here, however, the definition of $f_{\vec w, b}(\vec x)$ is different:
+$$
+\begin{aligned}
+w_j &amp;= w_j - \alpha\dfrac{d}{dw_j}J(\vec w, b) \\
+&amp;= w_j - \alpha\dfrac{1}{m}\sum^m_{i = 1}(f_{\vec w, b}(x^{(i)}) - y^{(i)})x_j^{(i)} \\
+\\
+&amp;\text{(j = 1, 2, &hellip;, n)}
+\end{aligned}
+$$</p>
+<p>$$
+\begin{aligned}
+b &amp;= b - \alpha\dfrac{d}{db}J(\vec w, b) \\
+&amp;=b - \alpha\dfrac{1}{m}\sum^m_{i = 1}(f_{\vec w, b}(x^{(i)}) - y^{(i)}) \\
+\end{aligned}
+$$</p>
 <h1 id="references">References</h1>
 <p>The content of this note is generated from <a href="https://www.coursera.org/learn/machine-learning?specialization=machine-learning-introduction">
 Supervised Machine Learning: Regression and Classification</a></p>
